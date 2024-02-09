@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Skeleton from "react-loading-skeleton";
+import {Link} from "react-router-dom"
 
 const Products = () => {
   const [data, setData] = useState([]);
@@ -62,24 +63,24 @@ const filterProduct = (cat) =>{
             Women's Clothing
           </button>
           <button className="btn btn-outline-dark me-2" onClick={()=>filterProduct("jewelery")}>Jewellery</button>
-          <button className="btn btn-outline-dark me-2"onClick={()=>filterProduct("Electronic")}>Electronic</button>
+          <button className="btn btn-outline-dark me-2"onClick={()=>filterProduct("electronics")}>Electronic</button>
         </div>
 
         
         {filter.map((product) => {
           return (
             <>
-              <div className="col-md-3">
+              <div className="col-md-3 pt-2">
                 <div className="card h-100 text-center p-4 " key={product.id}>
                   <img src={product.image} className="card-img-top" alt={product.title} height="250px"/>
                   <div className="card-body">
                     <h5 className="card-title mb-0">{product.title ? product.title.substring(0, 12) + "..." : "Untitled"}</h5>
                     <p className="card-text lead fw-bold">
-                      Rs.{product.price}
+                    ${product.price}
                     </p>
-                    <button className="btn btn-primary">
-                      Go somewhere
-                    </button>
+                    <Link to={`/productdesc/${product.id}`}><button className="btn btn-primary">
+                      Buy Now
+                    </button></Link>
                   </div>
                 </div>
               </div>

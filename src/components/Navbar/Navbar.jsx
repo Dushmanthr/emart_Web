@@ -7,11 +7,11 @@ import { FaShoppingCart } from "react-icons/fa";
 const Navbar = () => {
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-light bg-white py-3 shadow-sm">
+      <nav className="navbar navbar-expand-lg navbar-light bg-white py-3 shadow">
         <div className="container">
-          <a className="navbar-brand fw-bold fs-4" href="#">
+          <Link to='/' className="navbar-brand fw-bold fs-4">
             EMART
-          </a>
+          </Link>
           <button
             className="navbar-toggler"
             type="button"
@@ -26,33 +26,33 @@ const Navbar = () => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">
+                <Link to='/' className="nav-link active" aria-current="page" >
                   Home
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <Link to='/products' className="nav-link" >
                   Products
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <Link to='/about' className="nav-link" >
                   About
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <Link to= '/contact' className="nav-link" >
                  Contact
-                </a>
+                </Link>
               </li>
               
                 
             </ul>
             
             <div className="buttons">
-                <button className="btn btn-outline-dark"><FaSignInAlt className='me-1'/>Login</button>
-                <button className="btn btn-outline-dark ms-2"><IoIosPersonAdd className='me-1'/>Register</button>
-                <button className="btn btn-outline-dark ms-2"><FaShoppingCart className='me-1'/>Cart(0)</button>
+                <Link to='/login'><button className="btn btn-outline-dark"><FaSignInAlt className='me-1'/>Login</button></Link>
+                <Link to='/register'><button className="btn btn-outline-dark ms-2"><IoIosPersonAdd className='me-1'/>Register</button></Link>
+                <Link to='/cart'><button className="btn btn-outline-dark ms-2"><FaShoppingCart className='me-1'/>Cart(0)</button></Link>
             </div>
           </div>
         </div>
