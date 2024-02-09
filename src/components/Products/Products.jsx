@@ -48,7 +48,9 @@ const Products = () => {
                 {filter.map((product)=>{
                     return(
                         <>
-                            <div></div>
+                            <div classsName="col-md-3">
+                                
+                            </div>
                         </>
                     )
                 })}
